@@ -1,0 +1,218 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  
+  <style>
+  thead {
+    display: table;
+    table-layout:fixed;
+    width: 100%;
+}
+tbody {
+    display: block;
+    height: 500px;
+    overflow-y: scroll;
+}
+tbody tr {
+    display: table;
+    table-layout:fixed;
+    width: 100%;
+}
+  table { 
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  width: 95%;
+  /*table-layout: auto; */
+  overflow-y:scroll;
+  display:block; 
+  /* Table reset stuff */
+  border-collapse: separate; border-spacing: 0;
+  border: none; 
+}
+    
+td, th {  border: 0 none; height: 40px;}
+      
+th {
+  /* Gradient Background */
+  background: #000080;
+  color: #FFF; font-weight: bold;
+  height: 40px;
+  text-align: center;
+
+}
+    
+td { background: #FAFAFA; text-align: center; }
+
+/* Zebra Stripe Rows */
+    
+tr:nth-child(even) td { background: #EEE; } 
+tr:nth-child(odd) td { background: #FDFDFD; }
+
+/* First-child blank cells! */
+tr td:first-child, tr th:first-child { 
+  background: none; 
+  font-style: italic;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: right;
+  padding-right: 10px;
+  width: 80px;
+  /*max-width: 200px;*/ 
+}
+
+/* Add border-radius to specific cells! */
+tr:first-child th:nth-child(2) { 
+  border-radius: 5px 0 0 0; 
+} 
+
+tr:first-child th:last-child { 
+  border-radius: 0 5px 0 0; 
+}
+    .wrapper{
+    height: 150px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 150px;
+ }
+ .wrapper .selection{
+   width:150px;
+   border:1px solid #ccc
+ }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+.bottom-bar {
+    position: fixed;
+    text-align: center;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    background:#000;
+    padding:15px 0;
+    color: white;
+    margin-top:10px;
+  }
+  #nothingHere{
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+  }
+    .navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: black;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropbtn
+{
+  font-family: inherit;
+}
+</style>
+</head>
+<body>
+<center> <img border="1px solid black" height ="29%" width="100%" src="http://melaman2.com/premierleague/images/epl-top-banner_new.png"> </img> </center>
+<div class="navbar">
+  <a href="{{ url_for('homepage')}}">Home</a>
+  <a href="{{ url_for('tReliability')}}">Transfer Reliablity Guide</a>
+  <div class="dropdown">
+    <button class="dropbtn">Statistics
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{{ url_for('stats')}}">Newspaper/Reporter Accuracy</a>
+      <a href="{{ url_for('testPage')}}">Visualizations</a>
+      <a href="{{ url_for('graphs')}}">Graphs</a>
+    </div>
+  </div> 
+  <a href="{{ url_for('rAggregator')}}">Rumor Aggregator</a>
+</div>
+  <center> <h1> Results for {{ teamName|safe }} </h1> </center>
+
+<div id="results">
+  <div id="nothingHere"> <center> {{ nothingHere |safe}} </center> </div>
+<center> {{ table|safe}} </center>
+</div>
+
+
+
+
+</head>
+</body>
+<footer class="bottom-bar"> Website created by Taras Tataryn | 2018 DePauw University</footer>
+
+</html>

@@ -1,0 +1,368 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <style>
+  #topChoose{
+    height: 250px;
+    background-color: #2B2B2B;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+  .topBtn{
+    color: #FFF;
+  background-color: #900;
+  font-weight: bold;
+  border-radius: 4px;
+  border: none;
+  padding: 15px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top: 15px;
+  }
+/*  .topBtn:hover{
+    color: #900;
+  background-color: #FFF;
+  }*/
+  .topBtn:hover span {
+  padding-right: 25px;
+}
+.topBtn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.topBtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.topBtn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+  #accuracy{
+  margin: 0 auto;
+  height: 850px;
+  margin-bottom: 20px;
+}
+.left-table
+{
+  float:left;
+  width:47%;
+}
+.right-table
+{
+  float:right;
+  width:47%;
+}
+#left
+{
+float: left;
+color: white;
+width: 20%;
+margin-left: 41px;
+margin-top: 75px;
+}
+#middle { margin-left: 41px; float: left; width: 45%; }
+#right{
+    color: white;
+    margin-top: 75px;
+    margin-left: 41px;
+float: left;
+width: 20%;
+}
+  thead {
+    display: table;
+    table-layout:fixed;
+    width: 100%;
+    content: 'Winter Transfer Rumors';
+}
+tbody {
+    display: block;
+    height: 355px;
+    overflow-y: scroll;
+}
+tbody tr {
+    display: table;
+    table-layout:fixed;
+    width: 100%;
+}
+  table { 
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  width: 90%;
+  margin-top: 5px;
+/* table-layout: auto;*/
+  overflow-y:scroll;
+  display:block; 
+  /* Table reset stuff */
+  border-collapse: separate; border-spacing: 0;
+  border: none; 
+}
+#firstReport{
+    margin-bottom: 20px;
+}
+#firstReport th{
+    background: green;
+}
+#firstReport tbody { height: 450px ;
+}
+    
+td, th {  border: 0 none; height: 40px;}
+/*#right-table th{
+  background: red;
+  color: #FFF; font-weight: bold;
+  height: 30px;
+  text-align: center;
+}*/
+th {
+  /* Gradient Background */
+  background: #000080;
+  color: #FFF; font-weight: bold;
+  height: 30px;
+  text-align: center;
+
+}
+    
+td { background: #FAFAFA; text-align: center; }
+
+/* Zebra Stripe Rows */
+    
+tr:nth-child(even) td { background: #EEE; } 
+tr:nth-child(odd) td { background: #FDFDFD; }
+
+/* First-child blank cells! */
+tr td:first-child, tr th:first-child { 
+  background: none; 
+  font-style: italic;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: right;
+  padding-right: 10px;
+  width: 50px; 
+}
+
+/* Add border-radius to specific cells! */
+tr:first-child th:nth-child(2) { 
+  border-radius: 5px 0 0 0; 
+} 
+
+tr:first-child th:last-child { 
+  border-radius: 0 5px 0 0; 
+}
+#reporterDiv
+{
+    padding-top: 50px;
+}
+.bottom-bar {
+    position:relative;
+    text-align:center;
+    font-size:.8em;
+
+    background:#000;
+    padding:15px 0;
+    color: white;
+  }
+  hr{
+    border: 2px solid black;
+    width: 100%;
+  }
+  .navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: black;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropbtn
+{
+    font-family: inherit;
+}
+</style>
+</head>
+<body>
+<center> <img border="1px solid black" height ="29%" width="100%" src="http://melaman2.com/premierleague/images/epl-top-banner_new.png"> </img> </center>
+<div class="navbar">
+  <a href="{{ url_for('homepage')}}">Home</a>
+  <a href="{{ url_for('tReliability')}}">Transfer Reliablity Guide</a>
+  <div class="dropdown">
+    <button class="dropbtn">Statistics
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{{ url_for('stats')}}">Newspaper/Reporter Accuracy</a>
+      <a href="{{ url_for('testPage')}}">Visualizations</a>
+      <a href="{{ url_for('graphs')}}">Graphs</a>
+    </div>
+  </div> 
+  <a href="{{ url_for('rAggregator')}}">Rumor Aggregator</a>
+</div>
+  <center> <h1> Statistics </h1> </center>
+<div id="topChoose">
+    <div id="left">
+        <center> <h3> Find the accuracy of British Newspapers/Websites </h3> </center>
+        <center> <img style="clear: all" height="70px" width="90px" src="https://pbs.twimg.com/profile_images/937580004581478401/LEr-1gR_.jpg"> </center>
+    </div>
+    <div id="middle">
+<center> <a href="#newspapers"> <button class="topBtn"> <span> See Newspaper Accuracy Statistics </span> </button></a> </center>
+<center> <a href="#reporters"><button class="topBtn"> <span> See Individual Reporter Accuracy Statistics  </span></button> </a></center>
+<center> <a href="#first"><button class="topBtn"> <span> See who broke the transfer first </span></button> </a></center>
+    </div>
+    <div id="right">
+    <center> <h3> And find the accuracy of Individual British Reports </h3> </center>
+    <center> <img height="70px" width="80px" src="https://pbs.twimg.com/profile_images/569820231720505344/_VTNza_0_400x400.jpeg"> </center>
+    </div>
+   
+</div>
+
+<div id="accuracy">
+<a name="newspapers"> </a>
+<div class="left-table">
+<figcaption>
+  <center> <strong> <caption> Winter 17-18 Transfer Rumor Accuracy Statistics </caption> </strong> </center>
+{{ table |safe}}
+</figcaption>
+<center> <p><button onclick="sortTable(0)">Sort the table by Accuracy</button></p> </center>
+</div>
+<div class="right-table">
+    <figcaption>
+        <center> <strong> <caption> Summer 17 Transfer Rumor Accuracy Statistics </caption>  </strong></center>
+{{ table2 |safe}}
+</figcaption>
+<center> <p><button onclick="sortTable(1)">Sort the table by Accuracy</button></p> </center>
+</div>
+<div class="left-table">
+    <figcaption>
+    <center> <strong> <caption> Summer/Winter 16/17 Transfer Rumor Accuracy Statistics </caption>  </strong></center>
+{{table4 |safe}}
+</figcaption>
+<center> <p><button onclick="sortTable(2)">Sort the table by Accuracy</button></p> </center>
+</div>
+<div class="right-table">
+    <figcaption>
+    <center> <strong> <caption> Combined 16-18 Transfer Rumor Accuracy Statistics </caption>  </strong></center>
+{{table5 |safe}}
+</figcaption>
+<center> <p><button onclick="sortTable(3)">Sort the table by Accuracy</button></p> </center>
+</div>
+</div>
+
+
+<script>
+function sortTable(i) {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  tables = document.getElementsByClassName("dataframe");
+  table = document.getElementsByClassName("dataframe")[i];
+  switching = true;
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    switching = false;
+    for( i=0; i < (tables.length); i++){
+
+    rows = table.getElementsByTagName("TR");
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length); i++) {
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[3];
+      y = rows[i + 1].getElementsByTagName("TD")[3];
+      //check if the two rows should switch place:
+      if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+        //if so, mark as a switch and break the loop:
+        shouldSwitch= true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+}
+</script>
+<hr>
+<a name="reporters"> </a>
+
+<div id="reporterDiv">
+    <figcaption>
+  <center> <strong> <caption> Summer and Winter (17-18) Reporter Statistics </caption> </strong> </center>
+{{ table3 |safe}}
+</figcaption>
+<center> <p><button onclick="sortTable(4)">Sort the table by Accuracy</button></p> </center>
+</div>
+<hr>
+<div id="firstReport">
+    <a name="first"> </a>
+    <figcaption style="margin-top: 20px"> <center> <strong> <caption> List of some Summer 17 Transfers and First Sources to Report </caption> </strong></center> </figcaption>
+   <center>  {{ table6 |safe}} </center>
+</div>
+
+</head>
+</body>
+<footer class="bottom-bar"> Website created by Taras Tataryn | 2018 DePauw University</footer>
+
+</html>

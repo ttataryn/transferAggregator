@@ -1,0 +1,251 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  
+ <style>
+.clear
+{
+	clear: both;
+}
+
+ body
+ {
+ 	margin: 0;
+
+ }
+ #topHome{
+ 	background-color: #d8d8d8;
+		color: black;
+		text-align:center;
+		padding-top: 20px;
+		display: block;
+	overflow: scroll;
+	margin: 0;
+	clear: none;
+ }
+ #third
+ {
+ 	background-color: white;
+ 	color:black ;
+ 	text-align:center;
+ 	display: block;
+ 	margin-bottom: 30px;
+ }
+	#banner
+ 	{
+		background-color: #2e2e2e;
+		color: white;
+		text-align: center;
+		display: block;
+		clear: none;
+		margin: 0;
+ 	}
+
+ .button{
+  background-color: purple; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom:40px;
+}
+.transferEx
+{
+	border: 2px solid black;
+	margin-bottom:15px;
+}
+.wrap {
+   width:68%;
+   margin:0 auto;
+   position: relative;
+}
+.left_col {
+   float:left;
+   width:45%;
+}
+.right_col {
+   float:right;
+   width:45%;
+
+}
+.wrap:after
+{
+	content: "";
+    display: table;
+    clear: both;
+}
+.gBad
+ 	{
+ 		border: none;
+ 	}
+#boxed
+{
+	border: 4px solid purple;
+	width: 75%;
+	margin-bottom: 10px;
+}
+ .bottom-bar {
+    position: fixed;
+    text-align: center;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    background:#000;
+    padding:15px 0;
+    color: white;
+    margin-top:10px;
+  }
+  .navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: black;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropbtn
+{
+	font-family: inherit;
+}
+</style>
+</head>
+<body>
+<center> <img border="1px solid black" height ="30%" width="100%" src="http://melaman2.com/premierleague/images/epl-top-banner_new.png"> </img> </center>
+<div class="navbar">
+  <a class="active" href="#home">Home</a>
+  <a href="{{ url_for('tReliability')}}">Transfer Reliablity Guide</a>
+  <div class="dropdown">
+    <button class="dropbtn">Statistics
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{{ url_for('stats')}}">Newspaper/Reporter Accuracy</a>
+      <a href="{{ url_for('testPage')}}">Visualizations</a>
+      <a href="{{ url_for('graphs')}}">Graphs</a>
+    </div>
+  </div> 
+  <a href="{{ url_for('rAggregator')}}">Rumor Aggregator</a>
+</div>
+
+<div id = "topHome">
+  <center> <h1 style="padding-bottom: 12px"> EPL Transfer Aggregator Home Page </h1> </center>
+  <div class = "wrap">
+  	<div class = "left_col">
+  		<center> <img style="border:2px solid black" src="https://i2-prod.irishmirror.ie/incoming/article10881187.ece/ALTERNATES/s810/MAIN-Signings-Review.jpg" height="250px" width="365px"> </center> 
+  		<h3 style="margin-top: 30px"> Get all your rumors in a central location</h3>
+  		<p style="text-align: left; font-size: 17px; color:#777"> Twitter is a great resource to find transfer rumors for numerous teams around Europe. However, with so many tweets sent daily, it can be hard to manage and locate the rumors you are looking for. The EPL Transfer Aggregator solves this problem. Read below to learn more.</p>
+  	</div>
+  	<div class = "right_col" >
+  		<h3 style="margin-top: 20px;"> Sort Transfer Rumors in Real Time by Team</h3>
+  		<p style="text-align: left; font-size: 17px; color:#777; margin-bottom: 65px">  The English Premier League is one of the elite soccer leagues in Europe, but also have some of the most rich clubs in the world. This also means that daily, there will be hundreds if not thousands of rumors linking players with their teams.     </p>
+  		<center> <img style="border:2px solid black; margin-top: 27px" src="https://mediacdn.mancity.com/-/media/galleries/first-team/season-1718/laporte/laporte-signing-pic.ashx?width=1024&height=576" heght="290px" width="370px"> </center> 
+  	</div>
+
+  </div>
+  <center> <a href="#section2"> <img style="margin-top: 10px" height="60px" width="65px" src="https://d30y9cdsu7xlg0.cloudfront.net/png/10897-200.png"> </a> </center> 
+</div><div id="banner">
+<a name="section2"> </a>
+	<h1 style="padding:15px"> Transfer Rumor Reliability </h1>
+	<center> <div id="boxed"> <h3> ---- Not all rumors are true ---- </h3>
+		<p style="font-size: 16px"> The example below shows the Sun, an English Newspaper that is generally inaccurate, and an independent reporter. The Sun falsely reports about Neymar (a high-profile player) going to Manchester United (a high-profile club). This is a typical false rumor you will see. Click the button below to learn more on who to trust. </p> </div> </center>
+
+	<div class="wrap">
+
+	<div class="left_col">
+		<center> <img class="transferEx" height="250px" width="250px" src="{{url_for('static', filename='badTransfer.png')}}"> </center> 
+		<center> <img style="margin-left: 0px" class="gBad" height="80px" width="90px" src="https://vignette.wikia.nocookie.net/mysingingmonsters/images/2/24/Red-x.png/revision/latest?cb=20171113115328"> </center>
+	</div>
+
+	<div class="right_col">
+
+		<center> <img class="transferEx" height="250px" width="275px" src="{{url_for('static', filename='goodTransfer.png')}}"> </center> 
+		<center> <img style="margin-left: 0px" class="gBad" height="85px" width="100px" src="http://www.clker.com/cliparts/e/3/9/7/1245686792938124914raemi_Check_mark.svg.hi.png"> </center>
+	</div>
+
+	
+	</div>
+	<center> <a href="{{ url_for('tReliability')}}"> <button style="margin:15px" class= "button"> Click Here for the Transfer Reliability Guide</button>  </a></center>
+	<center> <a href="#section3"> <img style="margin: 10px" height="60px" width="65px" src="https://www.thrivingparish.org/wp-content/uploads/2018/01/white-down-arrow-png-2.png"> </a> </center> 
+</div>
+
+<div id="third">
+<a name="section3"> </a>
+<h2> Rumor Aggregator </h2>
+
+<hr> 
+
+<img class="clear" src="{{url_for('static', filename = 'gifTest.gif')}}" height="300px" width="500px" style="border: 2px solid black; margin: 5px">
+<br>
+<img class="clear" src="{{url_for('static', filename = 'downArrow.png')}}" height="100px" width= "100px"> 
+<br> 
+<img class="clear" src="{{url_for('static', filename = 'tableSample.png')}}" height="200px" width="350px">
+
+<center> <a href="{{ url_for('rAggregator')}}"> <button style="margin: 25px" class= "button"> Click here to get your team's transfer rumors</button>  </a></center>
+</div>
+
+</body>
+
+<footer class="bottom-bar"> Website created by Taras Tataryn | 2018 DePauw University</footer>
+
+
+</head>
+</html>

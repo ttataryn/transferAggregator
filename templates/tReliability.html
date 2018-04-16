@@ -1,0 +1,268 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <style>
+  thead {
+    display: table;
+    table-layout:fixed;
+    width: 100%;
+    content: 'Winter Transfer Rumors';
+}
+tbody {
+    display: block;
+    height: 500px;
+    overflow-y: scroll;
+}
+tbody tr {
+    display: table;
+    table-layout:fixed;
+    width: 100%;
+}
+  table { 
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  width: 80%;
+/* table-layout: auto;*/
+  overflow-y:scroll;
+  display:block; 
+  /* Table reset stuff */
+  border-collapse: separate; border-spacing: 0;
+  border: none; 
+}
+    
+td, th {  border: 0 none; height: 40px;}
+/*#right-table th{
+  background: red;
+  color: #FFF; font-weight: bold;
+  height: 30px;
+  text-align: center;
+}*/
+th {
+  /* Gradient Background */
+  background: #000080;
+  color: #FFF; font-weight: bold;
+  height: 30px;
+  text-align: center;
+
+}
+    
+td { background: #FAFAFA; text-align: center; }
+
+/* Zebra Stripe Rows */
+    
+tr:nth-child(even) td { background: #EEE; } 
+tr:nth-child(odd) td { background: #FDFDFD; }
+
+/* First-child blank cells! */
+tr td:first-child, tr th:first-child { 
+  background: none; 
+  font-style: italic;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: right;
+  padding-right: 10px;
+  width: 50px; 
+}
+
+/* Add border-radius to specific cells! */
+tr:first-child th:nth-child(2) { 
+  border-radius: 5px 0 0 0; 
+} 
+
+tr:first-child th:last-child { 
+  border-radius: 0 5px 0 0; 
+}
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: black;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropbtn
+{
+    font-family: inherit;
+}
+#banner
+{
+    background: #F4F4F4;
+    font-family: 'Lato', sans-serif;
+    margin-top: 30px;
+    padding: 20px 0;
+    padding-bottom: 20px;
+    position: relative;
+    text-align: center;
+
+}
+.lined-heading
+{
+    padding: 0 0 15px 0;
+    position: relative;
+    text-align: center;
+}
+.lined-heading:after {
+    background: #BA55D3;
+    content: '';
+    height: 1px;
+    width: 120px;
+    position: absolute;
+    left: calc(50% - 60px);
+    bottom: 0;
+}
+#container{
+  margin: 0 auto;
+  height: 380px;
+  margin-bottom: 10px;
+}
+#left-table
+{
+  float:left;
+  width:47%;
+}
+#right-table
+{
+  float:right;
+  width:47%;
+}
+.right-col
+{
+   float: right;
+   width:45%;
+ }
+ .left-col
+ {
+  float:left;
+  width: 45%;
+ }
+.list
+{
+  list-style-type: square;
+
+}
+ .tiers
+ {
+  margin-bottom: 10px;
+  clear: left;
+ }
+
+.bottom-bar {
+    position: fixed;
+    text-align: center;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    background:#000;
+    padding:15px 0;
+    color: white;
+    margin-bottom: 0px;
+  }
+</style>
+</head>
+<body>
+<center> <img border="1px solid black" height ="29%" width="100%" src="http://melaman2.com/premierleague/images/epl-top-banner_new.png"> </img> </center>
+<div class="navbar">
+  <a href="{{ url_for('homepage')}}">Home</a>
+  <a href="{{ url_for('tReliability')}}">Transfer Reliablity Guide</a>
+  <div class="dropdown">
+    <button class="dropbtn">Statistics
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{{ url_for('stats')}}">Newspaper/Reporter Accuracy</a>
+      <a href="{{ url_for('testPage')}}">Visualizations</a>
+      <a href="{{ url_for('graphs')}}">Graphs</a>
+    </div>
+  </div> 
+  <a href="{{ url_for('rAggregator')}}">Rumor Aggregator</a>
+</div>
+  <center> <h1> Transfer Reliability Guide </h1> </center>
+
+<div id="banner"> 
+<h4 class="lined-heading"> TRANSFER RUMORS SIMPLIFIED</h4>
+<p> When it comes to transfers, Twitter is a widely popular resource, which continually churns out rumors. </p>
+<p> The majority of these rumors have no basis, and may be there purely for clickbait and to attract more followers </p>
+<p> So, after examining hundreds of transfers and their corresponding tweets the past couple of years, I have compiled the</p>
+<p>  <strong> Transfer Rumor Reliability Guide  </strong> </p>
+<center> <a href="#section2"><img style="margin: 10px" height="30px" width="35px" src="https://s3.amazonaws.com/thinkific/file_uploads/2392/images/0d5/ddf/33c/purple_arrow_down.svg"> </a> </center>
+</div>
+<center> <h2> Tier-Based System </h2> </center>
+<div id="container">
+<a name="section2"> </a>
+<div class="left-col">
+
+<ul class="list">
+  <li class="tiers"><span><strong>Tier 0 -</strong> The official club Twitter or website. </span></li>
+  <li class="tiers"><span><strong>Tier 1 -</strong> These are the highest-quality sources. May not be 100% accurate or even the first to call a transfer. However, if they are reporting on it, it is almost certainly true, or will go through in the near future. </span> </li>
+  <li class="tiers"><span><strong>Tier 2 -</strong> These are a step down from the Tier 1 and fall just short of being considered Tier 1 credible. However, they are known to have current and reliable contacts within their respective/corresponding clubs and their reports still may indicate a strong possibility of them occuring.</span></li>
+  <li class="tiers"><span><strong>Tier 3 -</strong> Not very reliable, or average, especially compared to Tier 1 and 2. Some accounts in this category may fall into the click-bait tactics and are often fighting to be relevant among the sea of rumors and reporters. </span></li>
+  <li class="tiers"><span><strong>Tier 4 -</strong></span>This tier includes the rest: the aggregators, indirect sources, and other secondhand accounts. These companies and accounts make a living out of ensuring that you read their tweets and they will make up nearly anything to get what they want. </li>
+</ul>
+<center> <h5><em> Image to the right is based on accuracy statistics from data collected and research </em> </h5> </center>
+</div>
+<div class="right-col">
+<h3> Test Text </h3>
+</div>
+</div>
+
+</body>
+
+
+
+<footer class="bottom-bar"> Website created by Taras Tataryn | 2018 DePauw University</footer>
+
+
+
+</html>
